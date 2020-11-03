@@ -20,7 +20,7 @@ jobs:
 
       - name: Install Lunux dependencies
         if: startsWith(matrix.os,'ubuntu')
-        run: sudo apt-get install -y libsndfile-dev, libfftw3-dev, libasound2-dev,  autoconf, automake-1.15, pkg-config, m4
+        run: sudo apt-get install libsndfile1-dev, libfftw3-dev, libasound2-dev
 
       - name: Configure, build and test with Autotools
         run: |
