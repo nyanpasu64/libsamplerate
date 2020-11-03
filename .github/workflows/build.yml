@@ -1,0 +1,13 @@
+name: build & test
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      run: |
+        sudo apt-get install -y libsndfile-dev, libfftw3-dev, libasound2-dev,  autoconf, automake-1.15, pkg-config, m4
+        ./autogen.sh && ./configure --enable-sndfile --enable-alsa && make distcheck
+        cat src/config.h
