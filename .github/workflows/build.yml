@@ -22,7 +22,7 @@ jobs:
         if: startsWith(matrix.os,'ubuntu')
         run: |
           sudo apt-get update
-          sudo apt-get install libsndfile1-dev, libfftw3-dev, libasound2-dev
+          sudo apt-get install libsndfile-dev, libfftw3-dev, libasound2-dev
 
       - name: Configure, build and test with Autotools
         run: |
